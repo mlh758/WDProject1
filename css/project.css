@@ -1,0 +1,41 @@
+.movie{
+	box-sizing: border-box;
+	height: 200px;
+	width: 200px;
+	float: left;
+	border: 1px solid lightgrey;
+}
+
+.movie img{
+	box-sizing: border-box;
+	height: 200px;
+	width: 200px;
+	padding: 5px;
+}
+
+.grid-button{
+	background:url(../images/grid.jpg) no-repeat;
+	cursor: pointer;
+	width: 30px;
+	height: 34px;
+	float: right;
+	border: 0;
+	padding: 0;
+}
+
+.grid-button-selected{
+	background:url(../images/grid_pressed.jpg) no-repeat;
+}
+.list-button{
+	background:url(../images/list.jpg) no-repeat;
+	cursor: pointer;
+	width: 30px;
+	height: 34px;
+	float: right;
+	border: 0;
+	padding: 0;
+}
+
+.list-button-selected{
+	background:url(../images/list_pressed.jpg) no-repeat;
+}
