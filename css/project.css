@@ -1,23 +1,40 @@
-.movie{
+div, img{
 	box-sizing: border-box;
+}
+.movie{
 	height: 200px;
 	width: 200px;
 	float: left;
 	border: 1px solid lightgrey;
+	position: relative;
+	margin: 5px;
 }
 
 .movie img{
-	box-sizing: border-box;
 	height: 200px;
 	width: 200px;
 	padding: 5px;
+}
+.controls{
+	border-bottom: 1px solid lightgrey;
+	min-height: 35px;
+}
+.movie-caption {
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	height: 40px;
+	width: 200px;
+	background-color:rgba(0,0,0,0.3);
+	color: white;
+	text-align: center;
 }
 
 .grid-button{
 	background:url(../images/grid.jpg) no-repeat;
 	cursor: pointer;
-	width: 30px;
-	height: 34px;
+	width: 34px;
+	height: 30px;
 	float: right;
 	border: 0;
 	padding: 0;
@@ -29,8 +46,8 @@
 .list-button{
 	background:url(../images/list.jpg) no-repeat;
 	cursor: pointer;
-	width: 30px;
-	height: 34px;
+	width: 34px;
+	height: 30px;
 	float: right;
 	border: 0;
 	padding: 0;
@@ -38,4 +55,7 @@
 
 .list-button-selected{
 	background:url(../images/list_pressed.jpg) no-repeat;
+}
+.sort-options{
+	float: left;
 }
