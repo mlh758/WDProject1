@@ -1,6 +1,7 @@
 RenderGrid = function(movies){
 	var $movieContainer = $(".movie-container").empty()
 	var current = {}
+	sortMovies(movies);
 	for(var i = 0, len = movies.length; i < len; i++){
 		current = movies[i];
 		$movieContainer.append(
@@ -17,4 +18,18 @@ RenderGrid = function(movies){
 
 RenderList = function(movies){
 	var $movieContainer = $(".movie-container").empty()
+}
+
+sortMovies = function(movies){
+	var sortBy = $(".dropdown").val();
+	if(sortBy === "rating"){
+		movies.sort(function(a,b){
+			return a.rating - b.rating;
+		});
+	}
+	else{
+		movies.sort(function(a,b){
+			return a.year - b.year;
+		});
+	}
 }
