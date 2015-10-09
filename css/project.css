@@ -48,6 +48,12 @@ div, img{
 	margin: 5px;
 	overflow: hidden;
 }
+.movie:hover .movie-caption{
+	bottom: 85px;
+}
+.movie:hover .movie-starring{
+	bottom: 5px;
+}
 .movie-HD{
 	height: 30px;
 	width: 40px;
@@ -73,16 +79,20 @@ div, img{
 	background-color:rgba(0,0,0,0.3);
 	color: white;
 	text-align: center;
+	transition: 1s;
+	-webkit-transition: 1s;
 }
 .movie-starring{
 	position: absolute;
-	bottom: -45px;
+	bottom: -85px;
 	left: 5px;
-	height: 40px;
+	height: 80px;
 	width: 190px;
 	background-color:rgba(0,0,0,0.8);
 	color: white;
 	text-align: left;
+	transition: 1s;
+	-webkit-transition: 1s;
 }
 .controls{
 	border-bottom: 1px solid lightgrey;
