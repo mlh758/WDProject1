@@ -35,3 +35,11 @@ sortMovies = function(movies){
 		});
 	}
 }
+
+relabelMovie = function(movie){
+	return {
+		label: movie.title,
+		value: movie.year,
+		starring: movie.starring
+	}
+}

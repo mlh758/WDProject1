@@ -83,10 +83,8 @@ div, img{
 	float: left;
 }
 .ui-autocomplete{
-	max-height: 150px;
-	overflow-y: hidden;
+	max-width: 470px;
 	overflow-x: auto;
-	font-size: 10px;
 }
 .ui-autocomplete.ui-menu li {
 	font-size: 14px;

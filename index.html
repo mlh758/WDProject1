@@ -13,13 +13,11 @@
 	rendered = false;
 	$(function() {
 		$( "#movie_input" ).autocomplete({
-		  source: movies.movies.map(function(item){
-			return {
-				label: item.title,
-				value: item.year,
-				starring: item.starring
-			}
-		  }),
+		  source: function(request, response){
+			var data = movies.movies.map(relabelMovie);
+			var results = $.ui.autocomplete.filter(data, request.term);
+			response(results.slice(0,5));
+		  },
 		  focus: function(event, ui) {
 			$("#movie_input").val(ui.item.label);
 			return false;
