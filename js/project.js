@@ -4,9 +4,14 @@ RenderGrid = function(movies){
 	for(var i = 0, len = movies.length; i < len; i++){
 		current = movies[i];
 		$movieContainer.append(
-			"<div class='movie'>"+"<img src='" + current.photo + "'>" +
+			"<div class='movie'>"+"<img class='movie-img' src='" + current.photo + "'>" +
 			"<div class='movie-caption'>" + current.title + "<br>" + current.year + "</div>" + "</div>"
 		);
+		if(current.HD){
+			$(".movie").last().append(
+				"<div class='movie-HD'><img class='movie-HD-img' src='./images/hd.png'</div>"
+			)
+		}
 	}
 };
 

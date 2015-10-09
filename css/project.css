@@ -10,7 +10,20 @@ div, img{
 	margin: 5px;
 }
 
-.movie img{
+.movie-HD{
+	height: 30px;
+	width: 40px;
+	position: absolute;
+	top: 15px;
+	left: 15px;
+}
+.movie-HD-img{
+	height: 30px;
+	width: 40px;
+}
+
+
+.movie-img{
 	height: 200px;
 	width: 200px;
 	padding: 5px;
@@ -21,10 +34,10 @@ div, img{
 }
 .movie-caption {
 	position: absolute;
-	bottom: 0px;
-	left: 0px;
+	bottom: 5px;
+	left: 5px;
 	height: 40px;
-	width: 200px;
+	width: 190px;
 	background-color:rgba(0,0,0,0.3);
 	color: white;
 	text-align: center;
