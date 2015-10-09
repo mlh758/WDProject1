@@ -1,6 +1,41 @@
 div, img{
 	box-sizing: border-box;
 }
+@font-face{
+	font-family: oleo;
+	src: url(./Oleo.woff);
+}
+.page-header{
+	background-color: rgb(225, 225, 225);
+	margin-bottom: 5px;
+	position: relative;
+	min-height: 50px;	
+}
+.site-title{
+	font-family: oleo;
+}
+.page-header img{
+	width: 50px;
+}
+.input-wrapper{
+	display: inline-block;
+	margin-left: 10px;
+}
+.input-wrapper button{
+	background-color: rgb(0,140,202);
+	color: white;
+	border-radius: 0 5px 5px 0;
+	border: 1px solid rgb(0,140,202);
+	position: relative;
+	left: -5px;
+	height: 30px;
+}
+.input-wrapper input{
+	border-radius: 5px 0 0 5px;
+	border: 1px solid lightgrey;
+	min-width: 250px;
+	height: 30px;
+}
 .bolded{
 	font-weight: bold;
 }
