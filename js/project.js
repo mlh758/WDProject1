@@ -6,7 +6,9 @@ RenderGrid = function(movies){
 		current = movies[i];
 		$movieContainer.append(
 			"<div class='movie'>"+"<img class='movie-img' src='" + current.photo + "'>" +
-			"<div class='movie-caption'>" + current.title + "<br>" + current.year + "</div>" + "</div>"
+			"<div class='movie-caption'>" + current.title + "<br>" + current.year + "</div>" +
+			"<div class='movie-starring'><span class='bolded'>Starring:<br></span>" +
+			current.starring + "</div></div>"
 		);
 		if(current.HD){
 			$(".movie").last().append(

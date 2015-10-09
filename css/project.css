@@ -1,6 +1,9 @@
 div, img{
 	box-sizing: border-box;
 }
+.bolded{
+	font-weight: bold;
+}
 .movie{
 	height: 200px;
 	width: 200px;
@@ -8,8 +11,8 @@ div, img{
 	border: 1px solid lightgrey;
 	position: relative;
 	margin: 5px;
+	overflow: hidden;
 }
-
 .movie-HD{
 	height: 30px;
 	width: 40px;
@@ -21,16 +24,10 @@ div, img{
 	height: 30px;
 	width: 40px;
 }
-
-
 .movie-img{
 	height: 200px;
 	width: 200px;
 	padding: 5px;
-}
-.controls{
-	border-bottom: 1px solid lightgrey;
-	min-height: 35px;
 }
 .movie-caption {
 	position: absolute;
@@ -42,7 +39,20 @@ div, img{
 	color: white;
 	text-align: center;
 }
-
+.movie-starring{
+	position: absolute;
+	bottom: -45px;
+	left: 5px;
+	height: 40px;
+	width: 190px;
+	background-color:rgba(0,0,0,0.8);
+	color: white;
+	text-align: left;
+}
+.controls{
+	border-bottom: 1px solid lightgrey;
+	min-height: 35px;
+}
 .grid-button{
 	background:url(../images/grid.jpg) no-repeat;
 	cursor: pointer;
