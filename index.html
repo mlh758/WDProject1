@@ -31,8 +31,8 @@
 		})
 		.autocomplete( "instance" )._renderItem = function( ul, item ) {
 		  return $( "<li>" )
-			.append( "<span>" + item.label + "</span>" +
-					"<span>" + "(" +item.value + ")" + "</span>" +
+			.append( "<span class='bolded'>" + item.label + "</span>" +
+					"<span>" + "(" +item.value + "),&nbsp" + "</span>" +
 					"<span>" + "Starring: " + item.starring + "</span>")
 			.appendTo( ul );
 		};
