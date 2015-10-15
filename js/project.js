@@ -1,3 +1,8 @@
+/*
+* Renders a list of movies in grid format
+* @param movies: a list of movies to be rendered to the DOM
+* @changes the element with the .movie-container class by emptying it
+*/
 RenderGrid = function(movies){
 	var $movieContainer = $(".movie-container").empty()
 	var current = {}
@@ -18,10 +23,19 @@ RenderGrid = function(movies){
 	}
 };
 
+/*
+* Renders a list of movies in list format
+* @param movies: a list of movies to be rendered to the DOM
+* @changes the element with the .movie-container class by emptying it
+*/
 RenderList = function(movies){
 	var $movieContainer = $(".movie-container").empty()
 }
-
+/*
+* Sorts a list of movies by either rating or year
+* @param movies: a list of movies to be sorted
+* @requires a select box with at least a "dropdown" value
+*/
 sortMovies = function(movies){
 	var sortBy = $(".dropdown").val();
 	if(sortBy === "rating"){
@@ -35,7 +49,11 @@ sortMovies = function(movies){
 		});
 	}
 }
-
+/*
+* Changes the labels on a movie object for use with jQuery UI Autocomplete
+* @param movie: a movie object
+* @returns a movie object with new labels and only the title, year, and starring information
+*/
 relabelMovie = function(movie){
 	return {
 		label: movie.title,
