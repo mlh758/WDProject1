@@ -1,4 +1,3 @@
-
 var movies={"movies":[
                      {"title": "Blue Streak", "year": 1999, "starring": "Martin Lawrence, Luke Wilson", "HD":true, "description":"Blue Streak is a 1999 American buddy cop comedy film directed by Les Mayfield and starring Martin Lawrence, Luke Wilson, Dave Chappelle, Peter Greene, Nicole Ari Parker and William Forsythe. The film was shot on location in California. The prime shooting spot was Sony Pictures Studios which is located in Culver City, California.","photo":"data/blue-Streak.jpg","rating":4},
                      {"title": "Mrs. Doubtfire", "year": 1993, "starring": "Robin Williams, Sally Field", "HD":false, "description":"Mrs. Doubtfire is a 1993 American comedy film starring Robin Williams (who also served as co-producer) and Sally Field and based on the novel Alias Madame Doubtfire by Anne Fine. It was directed by Chris Columbus and distributed by 20th Century Fox. It won the Academy Award for Best Makeup." ,"photo":"data/doubt_fire.jpg","rating":2},
@@ -10,7 +9,4 @@ var movies={"movies":[
                      {"title": "The Mechanical Man", "year": 2012, "starring": "Jenna Fischer, Chris Messina","description":"The Giant Mechanical Man is an American dramedy film written and directed by Lee Kirk. It debuted at the 2012 Tribeca Film Festival and was distributed by Tribeca Films. ", "HD":true, "photo":"data/giant_mechanical_man.jpg","rating":3},
                      {"title": "Hugo", "year": 2011, "starring": "Asa Butterfield, Ben Kingsley","description":"Hugo is a 2011 American 3D historical adventure drama film directed and co-produced by Martin Scorsese and adapted for the screen by John Logan. Based on Brian Selznick's novel The Invention of Hugo Cabret, it is about a boy who lives alone in the Gare Montparnasse railway station in Paris in the 1930s.", "HD":true, "photo":"data/hugo.jpg","rating":1},
                      {"title": "Shrek 3", "year": 2007, "starring": "Mike Myers, Cameron Diaz","description":"When his new father-in-law, King Harold falls ill, Shrek is looked at as the heir to the land of Far, Far Away. Not one to give up his beloved swamp, Shrek recruits his friends Donkey and Puss in Boots to install the rebellious Artie as the new king. Princess Fiona, however, rallies a band of royal girlfriends to fend off a coup d'etat by the jilted Prince Charming.", "HD":false, "photo":"data/shrek3.gif","rating":4}
- 
-    
-    ]};
-
+]};
