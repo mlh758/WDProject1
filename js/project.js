@@ -19,19 +19,27 @@ RenderGrid = function(movies){
 };
 
 RenderList = function(movies){
-    var $movieContainer = $(".movie-container").empty()
-    var current = {}
+    var $movieContainer = $(".movie-container").empty();
+    var selectedMovie = {};
     sortMovies(movies);
-    for(var i = 0, len = movies.length; i < len; i++){
-        current = movies[i];
+
+    for(var i = 0, length = movies.length; i < length; i++)
+    {
+        selectedMovie = movies[i];
         $movieContainer.append(
-            "<div class='movie'>"+"<img class='movie-img' src='" + current.photo + "'>"
-        );
-        if(current.HD){
-            $(".movie").last().append(
-            "<div class='movie-HD'><img class='movie-HD-img' src='./images/hd.png'</div>"
-            )
+        "<div class= 'listItem'>" + "<div class='listItemMovie'>"+"<img class='listItemImage' src='" + selectedMovie.photo + "'>" + "</div>" +
+        "<div class= 'listItemTitleBox'><span class='listItemTitle'>" + selectedMovie.title + "</span>" + 
+        "<span class = 'listItemDate'> (" + selectedMovie.year + ")</span></div>" +
+        "<div><span class='bolded'>Starring: </span>" + "<span>" + selectedMovie.starring + "</span></div>" +
+        "<div class= 'listItemRatingBox'>" + "<span class='bolded'>Rating: <span>" + rateMovies(selectedMovie.rating) + "</div>" +
+        "<div class='listItemDescBox'>" + selectedMovie.description + "</div>" +
+        "</div>");
+
+        if(selectedMovie.HD)
+        {
+            $(".listItemMovie").last().append("<div class='movie-HD'><img class='movie-HD-img' src='./images/hd.png'</div>");
         }
+
     }
 }
 
@@ -73,4 +81,25 @@ MovieSearch = function(SearchInput, movies){
         }
     }
     return FoundMovie;
+}
+/*
+ * Generates the HTML code consisting of star image tags for the ratingsBox.
+ * @param: integer: an integer from 0 to 5.
+ * @returns a string of the appropriate concatenated HTML elements.
+ */
+rateMovies = function(rating)
+{
+    var tempHTML = "";
+    for (var j = 0; j < 5; j++)
+    {
+        if (j < rating)
+        {
+           tempHTML = tempHTML + "<img class = 'ratingStar' src='images/gold_star.png'>";
+        }
+        else
+        {
+            tempHTML = tempHTML + "<img class = 'ratingStar' src='images/regular_star.png'>";
+        }
+    }
+    return tempHTML;
 }

@@ -134,3 +134,57 @@ div, img{
 .ui-autocomplete.ui-menu li {
     font-size: 14px;
 }
+
+.listItem{
+    height: 260px;
+    width: 100%;
+    border-bottom: 1px solid;
+    border-color: rgb(245,245,245);
+    padding: 15px 0px 10px 0px;
+}
+
+.listItemTitleBox{
+    margin-bottom: 15px;
+}
+
+.listItemTitle{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.listItemDate{
+    font-size: 15px;
+    color: gray;
+}
+
+.listItemImage{
+    height: 220px;
+    width: 220px;
+    border-color: lightgray;
+    background-color: white;
+}
+
+.listItemMovie{
+    padding: 5px;
+    float: left;
+    border: 1px solid lightgrey;
+    position: relative;
+    margin: 0px 10px 0px 10px;
+}
+
+.listItemRatingBox{
+    margin: 15px 0px 15px 0px;
+}
+
+.listItemDescBox{
+    background-color: rgb(236,255,255);
+    width: 450px;
+    line-height: 1.5;
+    float: left;
+}
+
+.ratingStar{
+    height: 20px;
+    width: 20px;
+    margin-bottom: -6px;
+}
