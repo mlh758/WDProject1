@@ -69,15 +69,65 @@ MovieSearch = function(SearchInput, movies){
     var FoundMovie = [{}];
     var current = {};
     var JSONIndex = 0;
-    for(var i = 0, len = movies.length; i < len; i++){
+    var searchBy = $(".search-options").val();
+    for(var i = 0, len = movies.length; i < len; i++)
+    {
         current = movies[i];
-        if(current.title.search(SearchInput) !== -1 || current.starring.search(SearchInput) !== -1 || current.description.search(SearchInput) !== -1 || current.year == SearchInput){
-            FoundMovie[JSONIndex] = current;
-            JSONIndex++;
+        if(searchBy === "default")
+        {
+            if(current.title.search(SearchInput) !== -1 || current.starring.search(SearchInput) !== -1 || current.description.search(SearchInput) !== -1 || current.year == SearchInput || current.rating == SearchInput || ((SearchInput.toLowerCase() === 'hd') && (current.HD === true)))
+            {
+                FoundMovie[JSONIndex] = current;
+                JSONIndex++;
+            }
         }
-        else if(SearchInput.toLowerCase().valueOf() === new String("hd").valueOf() && current.hd === true){
-            FoundMovie[JSONIndex] = current;
-            JSONIndex++;
+        else if(searchBy === "title")
+        {
+            if(current.title.search(SearchInput) !== -1)
+            {
+                FoundMovie[JSONIndex] = current;
+                JSONIndex++;
+            }
+        }
+        else if(searchBy === "starring")
+        {
+            if(current.starring.search(SearchInput) !== -1)
+            {
+                FoundMovie[JSONIndex] = current;
+                JSONIndex++;
+            }
+        }
+        else if(searchBy === "rating")
+        {
+            if(current.rating == SearchInput)
+            {
+                FoundMovie[JSONIndex] = current;
+                JSONIndex++;
+            }
+        }
+        else if(searchBy === "year")
+        {
+            if(current.year == SearchInput)
+            {
+                FoundMovie[JSONIndex] = current;
+                JSONIndex++;
+            }
+        }
+        else if(searchBy === "HD")
+        {
+            if((current.title.search(SearchInput) !== -1 || current.starring.search(SearchInput) !== -1 || current.description.search(SearchInput) !== -1 || current.year == SearchInput || current.rating == SearchInput) && (current.HD === true))
+            {
+                FoundMovie[JSONIndex] = current;
+                JSONIndex++;
+            }
+        }
+        else
+        {
+            if(current.description.search(SearchInput) !== -1)
+            {
+                FoundMovie[JSONIndex] = current;
+                JSONIndex++;
+            }
         }
     }
     return FoundMovie;
