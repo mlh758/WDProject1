@@ -12,6 +12,7 @@
     <script>
         rendered = false;
         $(function() {
+            //Attach autocomplete feature
             $( "#movie_input" ).autocomplete({
                 source: function(request, response){
                   var data = movies.movies.map(relabelMovie);
@@ -27,13 +28,14 @@
                   return false;
                 }
             })
+            //Custom rendering function to appropriately display suggestions
             .autocomplete( "instance" )._renderItem = function( ul, item ) {
                 return $( "<li>" )
                 .append( "<span class='bolded'>" + item.label + "</span>" +
                         "<span>" + "(" +item.value + "),&nbsp" + "</span>" +
                         "<span>" + "Starring: " + item.starring + "</span>")
                 .appendTo( ul );
-            };
+            }; //End of autocomplete
             $("#grid_button").click(function(){
                 $(this).addClass("grid-button-selected");
                 $("#list_button").removeClass("list-button-selected").addClass("list-button");
@@ -43,7 +45,7 @@
             $("#list_button").click(function(){
                 $(this).addClass("list-button-selected");
                 $("#grid_button").removeClass("grid-button-selected").addClass("grid-button");
-                RenderList(movies.movies)
+                RenderList(movies.movies);
                 rendered = true;
             });
             $("#search_button").click(function(){
@@ -61,7 +63,7 @@
                 else if($("#list_button").hasClass("list-button-selected") && rendered){
                     RenderList(movies.movies);
                 }
-            })
+            });
         });
     </script>
 </head>
@@ -93,7 +95,6 @@
             <option value="year">Year</option>
         </select>
     </div>
-        <div class="movie-container">
-    </div>
+    <div class="movie-container"></div>
 </body>
 </html>
