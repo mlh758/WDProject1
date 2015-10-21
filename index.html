@@ -64,6 +64,19 @@
                     RenderList(movies.movies);
                 }
             });
+            $('#movie_input').on('propertychange keyup change',function(){
+                if($("#grid_button").hasClass("grid-button-selected") && rendered){
+                    RenderGrid(movies.movies);
+                }
+                else if($("#list_button").hasClass("list-button-selected") && rendered){
+                    RenderList(movies.movies);
+                }
+            });
+            $(document).ready(function(){
+                $('#grid_button').addClass('grid-button-selected');
+                RenderGrid(movies.movies);
+                rendered = true;
+            });
         });
     </script>
 </head>
