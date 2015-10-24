@@ -39,21 +39,37 @@
             $("#grid_button").click(function(){
                 $(this).addClass("grid-button-selected");
                 $("#list_button").removeClass("list-button-selected").addClass("list-button");
-                RenderGrid(movies.movies);
                 rendered = true;
+                if(localStorage.getItem('FoundMovie'))
+                {
+                    RenderGrid(JSON.parse(localStorage.getItem('FoundMovie')));
+                }
+                else
+                {
+                    RenderGrid(movies.movies);
+                }
             });
             $("#list_button").click(function(){
                 $(this).addClass("list-button-selected");
                 $("#grid_button").removeClass("grid-button-selected").addClass("grid-button");
-                RenderList(movies.movies);
                 rendered = true;
+                if(localStorage.getItem('FoundMovie'))
+                {
+                    RenderList(JSON.parse(localStorage.getItem('FoundMovie')));
+                }
+                else
+                {
+                    RenderList(movies.movies);
+                }
             });
             $("#search_button").click(function(){
+               var FoundMovie = MovieSearch($("#movie_input").val(), movies.movies);
+               localStorage.setItem('FoundMovie', JSON.stringify(FoundMovie));
                if($("#grid_button").hasClass("grid-button-selected") && rendered){
-                    RenderGrid(MovieSearch($("#movie_input").val(), movies.movies));
+                    RenderGrid(FoundMovie);
                 }
                 else if($("#list_button").hasClass("list-button-selected") && rendered){
-                    RenderList(MovieSearch($("#movie_input").val(), movies.movies));
+                    RenderList(FoundMovie);
                 }
             });
             $(".dropdown").change(function(){
@@ -65,6 +81,7 @@
                 }
             });
             $('#movie_input').on('propertychange keyup change',function(){
+                localStorage.removeItem("FoundMovie");
                 if($("#grid_button").hasClass("grid-button-selected") && rendered){
                     RenderGrid(movies.movies);
                 }

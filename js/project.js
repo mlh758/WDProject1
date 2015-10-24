@@ -5,20 +5,29 @@
 */
 RenderGrid = function(movies){
     var $movieContainer = $(".movie-container").empty();
-    var current = {};
-    sortMovies(movies);
-    for(var i = 0, len = movies.length; i < len; i++){
-        current = movies[i];
-        $movieContainer.append(
-            "<div class='movie'>"+"<img class='movie-img' src='" + current.photo + "'>" +
-            "<div class='movie-caption'>" + current.title + "<br>" + current.year + "</div>" +
-            "<div class='movie-starring'><span class='bolded'>Starring:<br></span>" +
-            current.starring + "</div></div>"
+    if(movies[0].title == null)
+    {
+        $movieContainer.append
+        (
+                "<div>Search did not find a movie that fit your criteria. Please try again.</div>"
         );
-        if(current.HD){
-            $(".movie").last().append(
-                "<div class='movie-HD'><img class='movie-HD-img' src='./images/hd.png'</div>"
+    }
+    else{
+        var current = {};
+        sortMovies(movies);
+        for(var i = 0, len = movies.length; i < len; i++){
+            current = movies[i];
+            $movieContainer.append(
+                "<div class='movie'>"+"<img class='movie-img' src='" + current.photo + "'>" +
+                "<div class='movie-caption'>" + current.title + "<br>" + current.year + "</div>" +
+                "<div class='movie-starring'><span class='bolded'>Starring:<br></span>" +
+                current.starring + "</div></div>"
             );
+            if(current.HD){
+                $(".movie").last().append(
+                    "<div class='movie-HD'><img class='movie-HD-img' src='./images/hd.png'</div>"
+                );
+            }
         }
     }
 };
@@ -30,26 +39,34 @@ RenderGrid = function(movies){
 */
 RenderList = function(movies){
     var $movieContainer = $(".movie-container").empty();
-    var selectedMovie = {};
-    sortMovies(movies);
-
-    for(var i = 0, length = movies.length; i < length; i++)
+    if(movies[0].title == null)
     {
-        selectedMovie = movies[i];
-        $movieContainer.append(
-        "<div class= 'listItem'>" + "<div class='listItemMovie'>"+"<img class='listItemImage' src='" + selectedMovie.photo + "'>" + "</div>" +
-        "<div class= 'listItemTitleBox'><span class='listItemTitle'>" + selectedMovie.title + "</span>" + 
-        "<span class = 'listItemDate'> (" + selectedMovie.year + ")</span></div>" +
-        "<div><span class='bolded'>Starring: </span>" + "<span>" + selectedMovie.starring + "</span></div>" +
-        "<div class= 'listItemRatingBox'>" + "<span class='bolded'>Rating: <span>" + rateMovies(selectedMovie.rating) + "</div>" +
-        "<div class='listItemDescBox'>" + selectedMovie.description + "</div>" +
-        "</div>");
-
-        if(selectedMovie.HD)
+        $movieContainer.append
+        (
+                "<div>Search did not find a movie that fit your criteria. Please try again.</div>"
+        );
+    }
+    else{
+        var selectedMovie = {};
+        sortMovies(movies);
+        for(var i = 0, length = movies.length; i < length; i++)
         {
-            $(".listItemMovie").last().append("<div class='movie-HD'><img class='movie-HD-img' src='./images/hd.png'</div>");
-        }
+            selectedMovie = movies[i];
+            $movieContainer.append(
+            "<div class= 'listItem'>" + "<div class='listItemMovie'>"+"<img class='listItemImage' src='" + selectedMovie.photo + "'>" + "</div>" +
+            "<div class= 'listItemTitleBox'><span class='listItemTitle'>" + selectedMovie.title + "</span>" + 
+            "<span class = 'listItemDate'> (" + selectedMovie.year + ")</span></div>" +
+            "<div><span class='bolded'>Starring: </span>" + "<span>" + selectedMovie.starring + "</span></div>" +
+            "<div class= 'listItemRatingBox'>" + "<span class='bolded'>Rating: <span>" + rateMovies(selectedMovie.rating) + "</div>" +
+            "<div class='listItemDescBox'>" + selectedMovie.description + "</div>" +
+            "</div>");
 
+            if(selectedMovie.HD)
+            {
+                $(".listItemMovie").last().append("<div class='movie-HD'><img class='movie-HD-img' src='./images/hd.png'</div>");
+            }
+
+        }
     }
 };
 
@@ -86,10 +103,10 @@ relabelMovie = function(movie){
 };
 
 /*
- * 
- * @param {type} SearchInput
- * @param {type} movies
- * @returns {Array}
+ * Searches through JSON Object for any movies that have categories that fit the search request
+ * @param SearchInput: the value the user entered in input
+ * @param movies: an array with all movies
+ * @returns a JSON object with movies that fit the search request
  */
 MovieSearch = function(SearchInput, movies){
     var FoundMovie = [{}];
